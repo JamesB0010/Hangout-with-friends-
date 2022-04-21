@@ -7,10 +7,6 @@ canvas.height = innerHeight * 0.75;
 
 var ctx = canvas.getContext('2d');
 
-window.onscroll = function(){
-  window.scrollTo(0, 0);
-}
-
 var player = new Player("New Player", "#000000", 10, 150, 150, "#ff0000", 2, {x:0,y:0}, {x:0,y:0});
 
 var upInterval = 10;
