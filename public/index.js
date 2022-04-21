@@ -41,7 +41,8 @@ addEventListener("mousemove", event =>{
 })
 
 canvas.addEventListener("touchstart", event =>{
-  console.log("mobile touch");
+  ctx.fillStyle = "000000"
+  ctx.fillRect(0,0,50,50);
 })
 
 var nameInput = document.getElementById("nameInp");
