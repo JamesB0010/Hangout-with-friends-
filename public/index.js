@@ -44,7 +44,7 @@ canvas.addEventListener("touchstart", event =>{
   let evt = (typeof event.originalEvent === "undefined") ? event : event.originalEvent;
   console.log("iphone touch");
   let touch = evt.touches[0] || evt.changedTouches[0];
-  console.log(touch);
+  console.log(touch.pageX);
   if (!(event.clientX > rect.left && event.clientX < rect.right && event.clientY > rect.top && event.clientY < rect.bottom)){
     return
   }
