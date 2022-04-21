@@ -41,6 +41,8 @@ addEventListener("mousemove", event =>{
 })
 
 canvas.addEventListener("touchstart", event =>{
+  console.log("iphone touch");
+  console.log(event);
   if (!(event.clientX > rect.left && event.clientX < rect.right && event.clientY > rect.top && event.clientY < rect.bottom)){
     return
   }
@@ -96,7 +98,6 @@ function render(){
 }
 
 function update(){
-  console.log(ids);
   render();
   player.update();
   socket.emit("update", player, socket.id);
