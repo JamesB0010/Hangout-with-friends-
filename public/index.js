@@ -40,6 +40,10 @@ addEventListener("mousemove", event =>{
   player.direction.y = y - player.y;
 })
 
+canvas.addEventListener("touchstart", event =>{
+  console.log("mobile touch");
+})
+
 var nameInput = document.getElementById("nameInp");
 
 function updateName (){
