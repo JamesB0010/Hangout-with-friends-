@@ -42,7 +42,7 @@ addEventListener("mousemove", event =>{
 
 canvas.addEventListener("touchstart", event =>{
   console.log("iphone touch");
-  console.log(event.clientX);
+  console.log(event.touches[0].clientX);
   if (!(event.clientX > rect.left && event.clientX < rect.right && event.clientY > rect.top && event.clientY < rect.bottom)){
     return
   }
