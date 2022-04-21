@@ -40,7 +40,7 @@ addEventListener("mousemove", event =>{
   player.direction.y = y - player.y;
 })
 
-addEventListener("touchstart", event =>{
+canvas.addEventListener("touchstart", event =>{
   if (!(event.clientX > rect.left && event.clientX < rect.right && event.clientY > rect.top && event.clientY < rect.bottom)){
     return
   }
@@ -51,7 +51,7 @@ addEventListener("touchstart", event =>{
   player.direction.y = y - player.y;
 })
 
-addEventListener("touchmove", event =>{
+canvas.addEventListener("touchmove", event =>{
   if (!mouseDown){
     return;
   }
@@ -61,7 +61,7 @@ addEventListener("touchmove", event =>{
   player.direction.y = y - player.y;
 })
 
-addEventListener("touchend", event =>{
+canvas.addEventListener("touchend", event =>{
   player.direction.x = 0;
   player.direction.y = 0;
   mouseDown = false;
