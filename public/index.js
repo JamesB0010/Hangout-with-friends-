@@ -92,3 +92,7 @@ socket.on("render player", (otherPlayer, id) => {
   ids[id] = foreignPlayer;
   foreignPlayer.render();
 });
+
+socket.on("remove player", playerId => {
+  delete ids[playerId];
+});

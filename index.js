@@ -23,4 +23,8 @@ io.on('connection', (socket) =>{
   socket.on('update', (player, id) =>{
     socket.broadcast.emit("render player", player, id);
   })
+
+  socket.on('disconnect', (info) =>{
+    socket.broadcast.emit("remove player", socket.id);
+  })
 })
