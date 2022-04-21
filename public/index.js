@@ -41,26 +41,24 @@ addEventListener("mousemove", event =>{
 })
 
 canvas.addEventListener("touchstart", event =>{
+  //thank you stack overflow for this little snippet!
   let evt = (typeof event.originalEvent === "undefined") ? event : event.originalEvent;
-  console.log("iphone touch");
   let touch = evt.touches[0] || evt.changedTouches[0];
+
   console.log(touch.pageX);
-  if (!(event.clientX > rect.left && event.clientX < rect.right && event.clientY > rect.top && event.clientY < rect.bottom)){
-    return
-  }
   mouseDown = true;
-  let x = event.clientX - rect.left;
-  let y = event.clientY - rect.top;
+  let x = touch.pageX
+  let y = touch.pageY
   player.direction.x = x - player.x;
   player.direction.y = y - player.y;
 })
 
 canvas.addEventListener("touchmove", event =>{
-  if (!mouseDown){
-    return;
-  }
-  let x = event.clientX - rect.left;
-  let y = event.clientY - rect.top;
+  let evt = (typeof event.originalEvent === "undefined") ? event : event.originalEvent;
+  let touch = evt.touches[0] || evt.changedTouches[0];
+
+  let x = touch.pageX
+  let y = touch.pageY
   player.direction.x = x - player.x;
   player.direction.y = y - player.y;
 })
@@ -68,7 +66,6 @@ canvas.addEventListener("touchmove", event =>{
 canvas.addEventListener("touchend", event =>{
   player.direction.x = 0;
   player.direction.y = 0;
-  mouseDown = false;
 })
 
 var nameInput = document.getElementById("nameInp");
